@@ -71,8 +71,9 @@ main{
 
 /* second */
 .second{
-    display: block;
+    display: flex;
     justify-content: center;
+    flex-direction: column;
     /* border: 1px solid red; */
     width: 1200px;
 }
