@@ -1,0 +1,218 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+
+}
+
+body{
+    overflow-x: hidden;
+}
+
+/* header */
+header{
+    display: flex;
+    padding: 0.5rem;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+header p ,nav{
+    flex: 1 1;
+    align-items: center;
+}
+
+
+header nav ul{
+    display: flex;
+    justify-content: right;
+}
+
+header nav svg{
+    display: None;
+}
+
+nav ul li{
+    list-style-type: none;
+    
+}
+
+a{
+    text-decoration: none;
+    padding: 0.7rem;
+    color: black;
+
+}
+
+/* main */
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* first */
+.first{
+    display: flex;
+    background-color: rgb(196, 230, 255);
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.first p{
+    font-size: 40px;
+}
+
+/* second */
+.second{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    width: 1200px;
+}
+
+section div.top{
+    display: flex;
+    width: 100%;
+    margin: 1rem 0 0.5rem 0 ;
+}
+
+
+
+div.top p{
+    padding: 0 0.5rem;
+}
+
+div.left{
+    display: flex;
+    align-items: center;
+    background-color: rgb(196, 230, 255);
+    margin: 0 0.5rem;
+    width: 50%;
+    height: 50px;
+
+}
+
+div.right{
+    display: flex;
+    align-items: center;
+    background-color: rgb(196, 230, 255);
+    margin: 0 0.5rem;
+    width: 50%;
+    height: 50px;
+
+}
+
+
+
+div.top img{
+    width: 80px;
+    height: 50px;
+    object-fit: cover; 
+}
+
+div.mid{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+div.content{
+    /* border: 1px solid red; */
+    margin: 1%;
+    font-size: 0;
+    position: relative;
+    z-index: 0;
+    width: 23%;
+
+}
+
+div.content img{
+    width: 100%;
+    z-index: 1;
+
+}
+
+div.content p{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: red; */
+    
+}
+
+div.content img.star{
+    width: 2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+}
+
+
+
+@media screen and (max-width:1200px) {
+    .second{
+        display: block;
+        justify-content: center;
+        /* border: 1px solid red; */
+        width: 90%;
+        margin: 1rem;
+    }
+    
+    div.content{
+        width: 48%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .active{
+        display: None;
+    }
+
+    header nav {
+        display: flex;
+        justify-content: right;
+
+    }
+
+    header nav svg{
+        display: flex;
+        height: 30px;
+        cursor: pointer;
+
+    }
+
+
+    section div.top{
+        width: 100%;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    div.left{
+        width: 100%;
+        margin: 0.5rem 0rem;
+    }
+    
+    div.right{
+        width: 100%;
+        margin: 0.5rem 0rem;
+
+    }
+
+    div.content{
+        margin: 0 0 1rem 0;
+        width: 100%;
+    }
+}
