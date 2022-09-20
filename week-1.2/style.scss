@@ -5,6 +5,10 @@
     font-size: 20px;
 }
 
+#toggler{
+    display: None;
+}
+
 body{
     overflow-x: hidden;
 }
@@ -145,15 +149,38 @@ main{
 }
 
 @media screen and (max-width:600px) {
+
+    
     header{
         nav{
-            ul{
-                display: None;
-            }
+
             svg{
                 display: flex;
                 width: 1.5rem;
+                cursor: pointer;
             }
+            ul{
+                position: fixed;
+                display: block;
+                top: 0;
+                right: 0;
+                z-index: 99;
+                background-color: rgb(255, 255, 255);
+                width: 50%;
+                height: 100%;
+                box-shadow: 3px 3px 5px 1.5px rgb(0, 0, 0);
+                text-align: center;
+                transform: scaleX(0);
+                transform-origin: 100% 50%;
+                transition: transform 0.5s ease-in-out;
+                li{
+                    padding: 1rem;
+                }
+
+            }            
+
+
+
         }
 
     }

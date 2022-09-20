@@ -6,6 +6,10 @@
   font-size: 20px;
 }
 
+#toggler {
+  display: None;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -179,14 +183,36 @@ main .second .mid .content .star {
 }
 
 @media screen and (max-width: 600px) {
-  header nav ul {
-    display: None;
-  }
   header nav svg {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 1.5rem;
+    cursor: pointer;
+  }
+  header nav ul {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 0;
+    z-index: 99;
+    background-color: white;
+    width: 50%;
+    height: 100%;
+    -webkit-box-shadow: 3px 3px 5px 1.5px black;
+            box-shadow: 3px 3px 5px 1.5px black;
+    text-align: center;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  }
+  header nav ul li {
+    padding: 1rem;
   }
   main .second .top {
     display: block;
