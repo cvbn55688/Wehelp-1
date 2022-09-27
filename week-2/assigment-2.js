@@ -12,6 +12,7 @@ function calculate(min, max, step){
     }
     console.log(sum);
 }
+
 calculate(1, 3, 3);
 calculate(1, 3, 1); // 你的程式要能夠計算 1+2+3，最後印出 6
 calculate(4, 8, 2); // 你的程式要能夠計算 4+6+8，最後印出 18
@@ -31,6 +32,7 @@ function avg(data){
     }
     console.log("非manager的員工有" + n + "位, 薪水總和為" + sum + "元, 平均為" + sum/n + "元")
 }    
+
 avg({
     "employees":[
     {
@@ -86,6 +88,7 @@ function maxProduct(nums){
     }
     console.log(max);
 }
+
 maxProduct([5, 20, 2, 6]) // 得到 120
 maxProduct([10, -20, 0, 3]) // 得到 30
 maxProduct([10, -20, 0, -3]) // 得到 60
@@ -107,6 +110,7 @@ function twoSum(nums, target){
         }
     }
 }
+
 let result=twoSum([2, 11, 7, 15], 9);
 console.log(result); // show [0, 2] because nums[0]+nums[2] is 9
     
@@ -129,6 +133,7 @@ function maxZeros(nums){
     });
     console.log(total)
 }
+
 maxZeros([0, 1, 0, 0]); // 得到 2
 maxZeros([1, 0, 0, 0, 0, 1, 0, 1, 0, 0]); // 得到 4
 maxZeros([1, 1, 1, 1, 1]); // 得到 0
