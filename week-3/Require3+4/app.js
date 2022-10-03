@@ -36,7 +36,6 @@ function changeForm() {
 changeForm();
 
 //載入更多
-
 let loadButton = document.querySelector(".button button");
 let allImg = document.querySelectorAll("img.change");
 loadButton.addEventListener("click", loadMore);
