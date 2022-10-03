@@ -60,6 +60,7 @@ function loadMore() {
   if (allImg.length == allLength) {
     loadButton.style.display = "none";
   }
+  
   changeForm();
 }
 
