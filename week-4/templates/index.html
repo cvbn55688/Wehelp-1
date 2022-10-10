@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>首頁</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='styles/style.css')}}"
+    />
+  </head>
+  <body>
+    <nav>
+      <p>歡迎光臨，請輸入帳號密碼</p>
+    </nav>
+    <main>
+      <p>登入系統</p>
+      <form action="/signin" , method="post">
+        <div class="account">
+          <p>帳號</p>
+          <input type="text" name="account" />
+        </div>
+        <div class="password">
+          <p>密碼</p>
+          <input type="password" name="password" />
+        </div>
+        <button>登入</button>
+      </form>
+
+      <hr />
+
+      <p>計算正整數的平方</p>
+      <form action="/calculate">
+        <div class="calculate">
+          <p>正整數</p>
+          <input type="number" name="number" required />
+        </div>
+        <button>計算</button>
+      </form>
+    </main>
+  </body>
+</html>

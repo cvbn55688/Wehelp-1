@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登入失敗</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='styles/style.css')}}"
+    />
+  </head>
+  <body>
+    <nav><p>失敗頁面</p></nav>
+
+    <main>
+      <p>{{errorMes}}</p>
+      <a href="/">返回</a>
+    </main>
+  </body>
+</html>
