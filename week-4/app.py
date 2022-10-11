@@ -4,7 +4,6 @@ from flask import render_template
 from flask import redirect
 from flask import session
 
-
 app = Flask(
     __name__,
     static_folder="static",
@@ -46,11 +45,6 @@ def error():
 def signout():
     session["isLogin"] = False #設定為未登入
     return redirect("/")
-
-@app.route("/calculate")
-def calculate():
-    num = request.args.get("number")
-    return redirect("/square/"+num)
 
 @app.route("/square/<num>")
 def square(num):

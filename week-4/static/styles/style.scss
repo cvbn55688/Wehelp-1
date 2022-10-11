@@ -36,7 +36,8 @@ main {
     font-size: 25px;
     font-weight: bolder;
   }
-  form {
+  form,
+  .form {
     display: flex;
     flex-direction: column;
     align-items: center;

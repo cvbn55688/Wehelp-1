@@ -30,13 +30,14 @@
       <hr />
 
       <p>計算正整數的平方</p>
-      <form action="/calculate">
+      <div class="form">
         <div class="calculate">
           <p>正整數</p>
-          <input type="number" name="number" required />
+          <input type="number" name="number" id="input" required />
         </div>
-        <button>計算</button>
-      </form>
+        <button class="submit">計算</button>
+      </div>
     </main>
   </body>
+  <script src="{{url_for('static', filename='app.js')}}"></script>
 </html>
