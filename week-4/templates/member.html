@@ -15,6 +15,11 @@
     <main>
       <p>恭喜您，成功登入系統</p>
       <a href="/signout">登出系統</a>
+      <br />
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+      message in messages %}
+      <p style="font-size: 20px">{{ message }}</p>
+      {% endfor %} {% endif %} {% endwith %}
     </main>
   </body>
 </html>

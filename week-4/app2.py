@@ -1,8 +1,10 @@
+from distutils.log import info
 from flask import Flask
 from flask import request
 from flask import render_template
 from flask import redirect
 from flask import make_response
+from flask import flash
 
 app = Flask(
     __name__,
@@ -14,9 +16,13 @@ app.secret_key="test"
 
 @app.route("/") #首頁
 def index():
-    resp = make_response(render_template("index.html"))
-    resp.set_cookie(key="isLogin", value="", expires=0) #先清除使用者資料
-    return resp
+    loginCookie = request.cookies.get("isLogin")
+    if loginCookie == "True": #判斷是否已登入，如果已登入就自動跳轉到member
+        flash("您已登入，若要登出請按'登出系統'")
+        return redirect ("/member")
+    else:
+        return render_template("index.html")
+    
 
 @app.route("/signin", methods=["POST"]) #驗證帳密
 def signin():
