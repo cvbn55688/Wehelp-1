@@ -32,8 +32,10 @@ def signin():
 @app.route("/member") #會員頁
 def member():
     if session["isLogin"] == True: #判斷是否已登入
+        print(session["isLogin"])
         return render_template("member.html")
     else:
+        print(session["isLogin"])
         return redirect("/")
 
 @app.route("/error") #錯誤頁

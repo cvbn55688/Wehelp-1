@@ -5,6 +5,7 @@ from flask import render_template
 from flask import redirect
 from flask import make_response
 from flask import flash
+from cryptography.fernet import Fernet
 
 app = Flask(
     __name__,
@@ -12,13 +13,20 @@ app = Flask(
     static_url_path="/"
 )
 
+#加密密鑰
+key = Fernet.generate_key()
+f = Fernet(key)
+token = f.encrypt(b"True")
+
+#session密鑰
 app.secret_key="test"
 
 @app.route("/") #首頁
 def index():
     loginCookie = request.cookies.get("isLogin")
-    if loginCookie == "True": #判斷是否已登入，如果已登入就自動跳轉到member
-        flash("您已登入，若要登出請按'登出系統'")
+    if loginCookie != None: #判斷是否已登入，如果已登入就自動跳轉到member
+        mes = "您已登入，若要登出請按'登出系統"
+        flash(mes)
         return redirect ("/member")
     else:
         return render_template("index.html")
@@ -30,7 +38,7 @@ def signin():
     password = request.form["password"]
     if account == "test" and password == "test":
         resp = make_response(redirect ("/member"))
-        resp.set_cookie(key="isLogin", value="True") #設定cookie
+        resp.set_cookie(key="isLogin", value = token) #設定cookie
         return resp
     elif account == "" or password == "":
         return redirect ("/error?message=請輸入帳號、密碼")
@@ -39,10 +47,12 @@ def signin():
 
 @app.route("/member") #會員頁
 def member():
-    loginCookie = request.cookies.get("isLogin")
-    if loginCookie == "True": #判斷是否已登入
+    loginCookie = request.cookies.get("isLogin") #檢查是否登入
+    if (loginCookie != None) and (f.decrypt(loginCookie) == b"True"):
         return render_template("member.html")
     else:
+        mes = "**請先登入系統**"
+        flash(mes)
         return redirect("/")
 
 @app.route("/error") #錯誤頁
