@@ -10,7 +10,9 @@
   insert member(name, username, password, follower_count) values('name6', 'test6', 'test6', 567);
   ```
     ![image](https://user-images.githubusercontent.com/109027415/196142444-c0321e58-f9ba-4a67-aea7-1fdbd106e2e5.png)
-
+    
+    
+    
 * 使⽤ SELECT 指令取得所有在 member 資料表中的會員資料。
   ```
   select * from member;
