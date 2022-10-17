@@ -9,13 +9,13 @@
   insert member(name, username, password, follower_count) values('name5', 'test5', 'test5', 567);
   insert member(name, username, password, follower_count) values('name6', 'test6', 'test6', 567);
   ```
-  :![image](https://user-images.githubusercontent.com/109027415/196142444-c0321e58-f9ba-4a67-aea7-1fdbd106e2e5.png):
+    ![image](https://user-images.githubusercontent.com/109027415/196142444-c0321e58-f9ba-4a67-aea7-1fdbd106e2e5.png)
 
 * 使⽤ SELECT 指令取得所有在 member 資料表中的會員資料。
   ```
   select * from member;
   ```
-  ![image](https://user-images.githubusercontent.com/109027415/196142949-633fc78d-29c1-4e88-b1b9-599d02800d7f.png)
+    ![image](https://user-images.githubusercontent.com/109027415/196142949-633fc78d-29c1-4e88-b1b9-599d02800d7f.png)
 
 * 使⽤ SELECT 指令取得所有在 member 資料表中的會員資料，並按照 time 欄位，由近到遠排序。
   ```
