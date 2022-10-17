@@ -1,4 +1,8 @@
 # 第五周作業
+
+### 要求二
+  ![image](https://user-images.githubusercontent.com/109027415/196150818-a30161be-7f42-4dce-a5f3-1fe9cce844c0.png)
+
 ### 要求三
 * 使⽤ INSERT 指令新增⼀筆資料到 member 資料表中，這筆資料的 username 和password 欄位必須是 test。接著繼續新增⾄少 4 筆隨意的資料。
   ```
