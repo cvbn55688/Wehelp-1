@@ -34,3 +34,18 @@
   select * from member where username = 'test';
   ```
   ![image](https://user-images.githubusercontent.com/109027415/196144199-2b1ff295-d5f0-4d90-9922-5b5d61e2db1f.png)
+
+* 使⽤ SELECT 指令取得欄位 username 是 test、且欄位 password 也是 test 的資料。
+  ```
+  select * from member where username = 'test' and password = 'test';
+  ```
+  ![image](https://user-images.githubusercontent.com/109027415/196144530-a533f1b2-daff-4945-a937-cdf44cd1ec2f.png)
+ 
+* 使⽤ UPDATE 指令更新欄位 username 是 test 的會員資料，將資料中的 name 欄位改成 test2。
+  ```
+    update member set username = 'test2' where username = 'test';
+    select * from member where username = 'test2';
+  ```
+  ![image](https://user-images.githubusercontent.com/109027415/196145075-c4fb902a-ebf7-4cb7-91f9-0a1587d28aba.png)
+
+
