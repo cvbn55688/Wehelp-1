@@ -127,7 +127,7 @@
   where not exists(select * from likeCount where mess_id = 6 and who_like = 'name6');
   #因為'name6'尚未對mess_id = 6點過讚，所以insert起作用。
   ```
-    ![image](https://user-images.githubusercontent.com/109027415/196443108-f3a70b8f-a640-41cb-bd11-6ae11d9d0119.png)
+    ![未命名](https://user-images.githubusercontent.com/109027415/196443650-ddd039c5-9755-47d1-b767-659ebec9e8b7.png)
 
 
 
