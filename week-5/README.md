@@ -95,9 +95,9 @@
 
 ### 輸出
   用CMD到mysqldump位置並輸入：
-  ```
-  mysqldump -u root -p website > data.sql
-  ```
+    ```
+    mysqldump -u root -p website > data.sql
+    ```
 
 
 ### 額外要求
@@ -116,6 +116,12 @@
   inner join member on member.id = message.member_id;
   ```
     ![image](https://user-images.githubusercontent.com/109027415/196439047-e7e2154b-0c7d-4d0d-8d17-f8a1b03a3222.png)
+ 
+* 會員若是嘗試對留言按讚：要能先檢查是否曾經按過讚，然後才將按讚的數量 +1 並且記錄按讚的會員是誰。
+  ```
+  insert likeCount(mess_id, who_like) select 3, 'name6' where not exists(select * from likeCount where mess_id = 3 and who_like = 'name6');
+  #456465
+  ```
 
 
 
