@@ -136,8 +136,8 @@
 
 * 利用count(mess_id)來計算按讚次數。
   ```
-  select count(mess_id) from likeCount where mess_id=1;
+  select count(mess_id) from likeCount where mess_id=6;
   ```
-    ![image](https://user-images.githubusercontent.com/109027415/196447953-daa8006e-55ff-4c29-96fc-a1d1d43b6752.png)
+    ![image](https://user-images.githubusercontent.com/109027415/196455561-6cc62314-f0ed-4524-b677-62f1593ccdd1.png)
 
 
