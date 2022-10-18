@@ -119,9 +119,15 @@
  
 * 會員若是嘗試對留言按讚：要能先檢查是否曾經按過讚，然後才將按讚的數量 +1 並且記錄按讚的會員是誰。
   ```
-  insert likeCount(mess_id, who_like) select 3, 'name6' where not exists(select * from likeCount where mess_id = 3 and who_like = 'name6');
-  #456465
+  insert likeCount(mess_id, who_like) select 3, 'name6' 
+  where not exists(select * from likeCount where mess_id = 3 and who_like = 'name6');
+  #因為'name6'已經對mess_id = 3點過讚了，所以insert並無作用。
+  
+  insert likeCount(mess_id, who_like) select 6, 'name6' 
+  where not exists(select * from likeCount where mess_id = 6 and who_like = 'name6');
+  #因為'name6'尚未對mess_id = 6點過讚，所以insert起作用。
   ```
+    ![image](https://user-images.githubusercontent.com/109027415/196443108-f3a70b8f-a640-41cb-bd11-6ae11d9d0119.png)
 
 
 
