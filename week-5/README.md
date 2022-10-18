@@ -101,16 +101,19 @@
 
 
 ### 額外要求
-* 創立一個likeCount table並insert資料
+* 創立一個likeCount table：
 
-  ![image](https://user-images.githubusercontent.com/109027415/196439872-ca8ae27a-4540-4e4c-8c49-88e8e1b5f744.png)
-  ![image](https://user-images.githubusercontent.com/109027415/196439951-7bcc937d-34c5-4906-958d-295ae136bb3e.png)
+    ![image](https://user-images.githubusercontent.com/109027415/196439872-ca8ae27a-4540-4e4c-8c49-88e8e1b5f744.png)
+  insert資料：
+  
+    ![image](https://user-images.githubusercontent.com/109027415/196439951-7bcc937d-34c5-4906-958d-295ae136bb3e.png)
 
 * 可以根據留言編號取得該留言有哪些會員按讚。
   ```
-  select member.name, message.content, likeCount.mess_id, likeCount.who_like from message inner join likeCount on message.id = likeCount.mess_id inner join member on     member.id = message.member_id;
+  select member.name, message.content, likeCount.mess_id, likeCount.who_like from message inner join likeCount on message.id = likeCount.mess_id 
+  inner join member on     member.id = message.member_id;
   ```
-  ![image](https://user-images.githubusercontent.com/109027415/196439047-e7e2154b-0c7d-4d0d-8d17-f8a1b03a3222.png)
+    ![image](https://user-images.githubusercontent.com/109027415/196439047-e7e2154b-0c7d-4d0d-8d17-f8a1b03a3222.png)
 
 
 
