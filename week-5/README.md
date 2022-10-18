@@ -99,9 +99,10 @@
     mysqldump -u root -p website > data.sql
     ```
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### 額外要求
-* 創立一個likeCount table：
+* 創立一個likeCount table並設定foreign key (mess_id) references message(id)：
 
     ![image](https://user-images.githubusercontent.com/109027415/196439872-ca8ae27a-4540-4e4c-8c49-88e8e1b5f744.png)
     
