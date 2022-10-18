@@ -129,6 +129,14 @@
   #因為'name6'尚未對mess_id = 6點過讚，所以insert起作用。
   ```
     ![未命名](https://user-images.githubusercontent.com/109027415/196443650-ddd039c5-9755-47d1-b767-659ebec9e8b7.png)
+    
+    確定有被加進資料庫：
+    ![未命名](https://user-images.githubusercontent.com/109027415/196447221-677af0a8-fae4-480e-b279-ad51b6cd9f32.png)
 
+* 利用count()來計算按讚數。
+  ```
+  select count(mess_id) from likeCount where mess_id=1;
+  ```
+    ![image](https://user-images.githubusercontent.com/109027415/196447953-daa8006e-55ff-4c29-96fc-a1d1d43b6752.png)
 
 
