@@ -11,7 +11,7 @@ def connectDB():
     connection = mysql.connector.connect(host = 'localhost',
                                         port= "3306",
                                         user = 'root',
-                                        password = 'zxc55332',
+                                        password = 'password',
                                         database = 'website_HW')
     return connection
 
