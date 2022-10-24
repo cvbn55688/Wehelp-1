@@ -15,12 +15,14 @@
       <p>歡迎光臨，請輸入帳號密碼</p>
     </nav>
     <main>
-      {% with messages = get_flashed_messages() %} {% if messages %} {% for
-      message in messages %}
-
-      <p>{{ message }}</p>
-      <br />
-      {% endfor %} {% endif %} {% endwith %}
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{ message }}</p>
+            <br />
+          {% endfor %} 
+        {% endif %} 
+      {% endwith %}
 
       <p>註冊帳號</p>
       <form action="/signup" , method="post">
