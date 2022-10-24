@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #3150a4;
+  height: 100px;
+}
+
+nav p {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bolder;
+  color: white;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2rem;
+}
+
+main .message div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+main .message div .mes {
+  margin-left: 0.5rem;
+}
+
+main hr {
+  width: 100vw;
+  margin: 1rem 0;
+}
+
+main a {
+  margin: 0.5rem;
+  font-size: 20px;
+}
+
+main p {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+main form,
+main .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5rem;
+}
+
+main form .account,
+main form .password,
+main form .calculate,
+main form .username,
+main form .content,
+main .form .account,
+main .form .password,
+main .form .calculate,
+main .form .username,
+main .form .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.5rem;
+}
+
+main form .account p,
+main form .password p,
+main form .calculate p,
+main form .username p,
+main form .content p,
+main .form .account p,
+main .form .password p,
+main .form .calculate p,
+main .form .username p,
+main .form .content p {
+  margin-right: 0.5rem;
+}
+
+main form .account input,
+main form .password input,
+main form .calculate input,
+main form .username input,
+main form .content input,
+main .form .account input,
+main .form .password input,
+main .form .calculate input,
+main .form .username input,
+main .form .content input {
+  width: 250px;
+  font-size: 20px;
+  padding: 2px 5px;
+}
+
+main form button,
+main .form button {
+  width: 60px;
+  height: 30px;
+}
+/*# sourceMappingURL=style.css.map */
