@@ -45,11 +45,13 @@ def signup():
 
     connection = connectDB()
     cursor = connection.cursor()
-    cursor.execute(f'select * from member where username="{username}";')
+    sql = 'select * from member where username= %s;'
+    cursor.execute(sql, (username,))
     records = cursor.fetchall()
 
     if records == []:
-        cursor.execute(f'insert member(name, username, password) values("{name}", "{username}", "{password}");')
+        sql = 'insert member(name, username, password) values(%s, %s, %s);'
+        cursor.execute(sql, (name, username, password))
         cursor.close()
         connection.commit()
         connection.close()
@@ -70,7 +72,8 @@ def signin():
 
     connection = connectDB()
     cursor = connection.cursor()
-    cursor.execute(f'select * from member where username="{account}" and password = "{password}";')
+    sql = 'select * from member where username = %s and password = %s ;'
+    cursor.execute(sql, (account, password))
     records = cursor.fetchall()
     cursor.close()
     connection.close()
@@ -112,7 +115,8 @@ def message():
     
     connection = connectDB()
     cursor = connection.cursor()
-    cursor.execute(f'insert message(userid, content) values({session["userid"]}, "{content}");')
+    sql = 'insert message(userid, content) values(%s, %s);'
+    cursor.execute(sql, (session["userid"], content))
     cursor.close()
     connection.commit()
     connection.close()
