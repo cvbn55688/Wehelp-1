@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  p {
+    color: aliceblue;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  background-color: rgb(30, 30, 30);
+}
+
+hr {
+  background-color: rgb(79, 79, 79);
+  border: 0;
+  height: 2px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(42, 42, 42);
+  height: 100px;
+  p {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+main {
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid rgb(176, 176, 176);
+    margin: 1rem;
+    object-fit: cover;
+  }
+  .headIMG {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    p {
+      font-size: 16px;
+      margin-right: 0.5rem;
+    }
+    input {
+      width: 22%;
+    }
+  }
+  .message {
+    div.head {
+      display: flex;
+      align-items: center;
+      margin: 0.5rem;
+      img {
+        width: 80px;
+        height: 80px;
+        margin: 0.5rem;
+      }
+      div {
+        margin-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        p span {
+          font-size: 20px;
+          font-weight: normal;
+          margin-left: 0.5rem;
+          color: rgba(255, 255, 255, 0.6);
+        }
+        .mes {
+          font-size: 25px;
+          font-weight: normal;
+          margin-top: 0.5rem;
+        }
+      }
+    }
+  }
+  hr {
+    width: 100vw;
+    margin: 1rem 0;
+  }
+  a {
+    margin: 0.5rem;
+    font-size: 20px;
+    color: rgb(160, 160, 160);
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  p {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  form,
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0.5rem;
+    .account,
+    .password,
+    .calculate,
+    .username,
+    .content {
+      display: flex;
+      margin: 0.5rem;
+      p {
+        margin-right: 0.5rem;
+      }
+      input {
+        width: 250px;
+        font-size: 20px;
+        padding: 2px 5px;
+        background-color: rgb(20, 20, 20);
+        border: 1px solid rgb(96, 96, 96);
+        color: white;
+      }
+    }
+    button {
+      width: 60px;
+      height: 30px;
+    }
+  }
+}
