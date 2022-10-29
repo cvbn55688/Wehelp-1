@@ -110,7 +110,6 @@ def member():
     if loginSession != None: #判斷是否已登入
         connection = connection_pool.get_connection()
         cursor = connection.cursor()
-        print(connection.connection_id)
         cursor.execute(f'select member.name, content, time, member.headIMG from message inner join member on member.id = message.userid order by time ASC;')
         records1 = cursor.fetchall()
         cursor.execute(f'select headIMG from member where id = "{session["userid"]}";')
