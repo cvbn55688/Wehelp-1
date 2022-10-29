@@ -1,5 +1,6 @@
 from multiprocessing import pool
 import os
+from tkinter import W
 from typing import final
 from flask import Flask
 from flask import request
@@ -14,18 +15,16 @@ import time
 
 
 
-# def connectDB():
 connection_pool = pooling.MySQLConnectionPool(
                                             host = 'localhost',
                                             port= "3306",
                                             user = 'root',
-                                            password = 'password',
+                                            password = 'zxc55332',
                                             database = 'website_HW',
                                             pool_name="my_pool",
                                             pool_size = 5
                                             )
-connection = connection_pool.get_connection()
-    # return connection
+
 
 
 app = Flask(
@@ -56,7 +55,7 @@ def signup():
     password = request.form["password"]
 
     try:
-        # connection = connectDB()
+        connection = connection_pool.get_connection()
         cursor = connection.cursor()
         sql = 'select * from member where username= %s;'
         cursor.execute(sql, (username,))
@@ -77,7 +76,7 @@ def signup():
     finally:
             cursor.close()
             connection.commit()
-            # connection.close()
+            connection.close()
 
 
 #驗證帳密
@@ -86,13 +85,13 @@ def signin():
     account = request.form["account"] #username
     password = request.form["password"]
 
-    # connection = connectDB()
+    connection = connection_pool.get_connection()
     cursor = connection.cursor()
     sql = 'select * from member where username = %s and password = %s ;'
     cursor.execute(sql, (account, password))
     records = cursor.fetchall()
     cursor.close()
-    # connection.close()
+    connection.close()
 
     if account == "" or password == "":
         return redirect ("/error?message=請輸入帳號、密碼")
@@ -112,14 +111,15 @@ def signin():
 def member():
     loginSession = session.get("userid")
     if loginSession != None: #判斷是否已登入
-        # connection = connectDB()
+        connection = connection_pool.get_connection()
         cursor = connection.cursor()
+        print(connection.connection_id)
         cursor.execute(f'select member.name, content, time, member.headIMG from message inner join member on member.id = message.userid order by time ASC;')
         records1 = cursor.fetchall()
         cursor.execute(f'select headIMG from member where id = "{session["userid"]}";')
         records2 = cursor.fetchall()[0][0]
         cursor.close()
-        # connection.close()
+        connection.close()
         return render_template("member.html", data = records1, username = session["name"], img_name = records2)
     else:
         mes = "您尚未登入，請登入系統"
@@ -131,13 +131,13 @@ def member():
 def message():
     content = request.form["content"]
     
-    # connection = connectDB()
+    connection = connection_pool.get_connection()
     cursor = connection.cursor()
     sql = 'insert message(userid, content) values(%s, %s);'
     cursor.execute(sql, (session["userid"], content))
     cursor.close()
     connection.commit()
-    # connection.close()
+    connection.close()
     return redirect("/member")
 
 #會員專頁
@@ -145,13 +145,13 @@ def message():
 def userPage():
     loginSession = session.get("userid")
     if loginSession != None: #判斷是否已登入
-        # connection = connectDB()
+        connection = connection_pool.get_connection()
         cursor = connection.cursor()
         sql = ('select headIMG from member where id = %s;')
         cursor.execute(sql, (session["userid"],))
         img_name = cursor.fetchall()[0][0]
         cursor.close()
-        # connection.close()
+        connection.close()
         return render_template("userPage.html", name = session["name"], img_name = img_name)
     else:
         mes = "您尚未登入，請登入系統"
@@ -170,13 +170,13 @@ def upload():
     img.save(img_path) #把圖片存在本地磁碟
     print(imgName)
 
-    # connection = connectDB()
+    connection = connection_pool.get_connection()
     cursor = connection.cursor()
     sql = 'update member set headIMG = %s where id = %s;' #在mySQL存入圖片檔名
     cursor.execute(sql, (imgName, session["userid"]),)
     cursor.close()
     connection.commit()
-    # connection.close()
+    connection.close()
     return redirect("/userPage")
 
 #錯誤頁
