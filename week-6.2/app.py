@@ -1,7 +1,4 @@
-from multiprocessing import pool
 import os
-from tkinter import W
-from typing import final
 from flask import Flask
 from flask import request
 from flask import render_template
