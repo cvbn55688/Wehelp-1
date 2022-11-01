@@ -148,6 +148,8 @@ def serch_member():
                 error_data = {"data" : None}      
                 error_data = jsonify(error_data)
                 return error_data
+        except Error as e:
+            print(e)
         finally:
             cursor.close()
             connection.close()
@@ -170,6 +172,8 @@ def serch_member():
                 error_mes = {"error" : True}
                 error_mes = jsonify(error_mes)
                 return error_mes
+        except Error as e:
+            print(e)
         finally:
             cursor.close()
             connection.commit()
