@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* p {
+  color: aliceblue;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #1e1e1e;
+}
+
+hr {
+  background-color: #4f4f4f;
+  border: 0;
+  height: 2px;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #2a2a2a;
+  height: 100px;
+}
+
+nav p {
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2rem;
+}
+
+main img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid #b0b0b0;
+  margin: 1rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .headIMG {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .headIMG p {
+  font-size: 16px;
+  margin-right: 0.5rem;
+}
+
+main .headIMG input {
+  width: 22%;
+}
+
+main .message div.head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5rem;
+}
+
+main .message div.head img {
+  width: 80px;
+  height: 80px;
+  margin: 0.5rem;
+}
+
+main .message div.head div {
+  margin-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0;
+}
+
+main .message div.head div p span {
+  font-size: 20px;
+  font-weight: normal;
+  margin-left: 0.5rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+main .message div.head div .mes {
+  font-size: 25px;
+  font-weight: normal;
+  margin-top: 0.5rem;
+}
+
+main hr {
+  width: 100vw;
+  margin: 1rem 0;
+}
+
+main a {
+  margin: 0.5rem;
+  font-size: 20px;
+  color: #a0a0a0;
+}
+
+main p {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+main form,
+main .form,
+main .serch,
+main .change {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0.5rem;
+}
+
+main form .account,
+main form .password,
+main form .calculate,
+main form .username,
+main form .content,
+main .form .account,
+main .form .password,
+main .form .calculate,
+main .form .username,
+main .form .content,
+main .serch .account,
+main .serch .password,
+main .serch .calculate,
+main .serch .username,
+main .serch .content,
+main .change .account,
+main .change .password,
+main .change .calculate,
+main .change .username,
+main .change .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0.5rem;
+}
+
+main form .account p,
+main form .password p,
+main form .calculate p,
+main form .username p,
+main form .content p,
+main .form .account p,
+main .form .password p,
+main .form .calculate p,
+main .form .username p,
+main .form .content p,
+main .serch .account p,
+main .serch .password p,
+main .serch .calculate p,
+main .serch .username p,
+main .serch .content p,
+main .change .account p,
+main .change .password p,
+main .change .calculate p,
+main .change .username p,
+main .change .content p {
+  margin-right: 0.5rem;
+}
+
+main form .account input,
+main form .password input,
+main form .calculate input,
+main form .username input,
+main form .content input,
+main .form .account input,
+main .form .password input,
+main .form .calculate input,
+main .form .username input,
+main .form .content input,
+main .serch .account input,
+main .serch .password input,
+main .serch .calculate input,
+main .serch .username input,
+main .serch .content input,
+main .change .account input,
+main .change .password input,
+main .change .calculate input,
+main .change .username input,
+main .change .content input {
+  width: 250px;
+  font-size: 20px;
+  padding: 2px 5px;
+  background-color: #141414;
+  border: 1px solid #606060;
+  color: white;
+}
+
+main form button,
+main .form button,
+main .serch button,
+main .change button {
+  margin: 0.5rem;
+  width: 60px;
+  height: 30px;
+}
+/*# sourceMappingURL=style.css.map */

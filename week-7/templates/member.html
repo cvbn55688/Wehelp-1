@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>會員首頁</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='styles/style.css')}}"
+    />
+  </head>
+  <body>
+    <nav><p>歡迎光臨，這裡是會員首頁</p></nav>
+
+    <main>
+      {% with message = get_flashed_messages() %} {% if message %}
+      <p>{{ message.0 }}</p>
+      {% endif %} {% endwith %}
+      <br />
+      <div class="head">
+        <p>{{username}}，歡迎登入系統</p>
+      </div>
+      <img src="{{url_for('static', filename='uploads/' + img_name)}}" alt="" />
+      <a href="/userPage">個人頁面</a>
+      <a href="/signout">登出系統</a>
+      <br />
+
+      <hr />
+
+      <br />
+      <p>快來留言吧!</p>
+      <form action="/message" , method="post">
+        <div class="content">
+          <p>內容</p>
+          <input type="text" name="content" required />
+        </div>
+        <button>送出</button>
+      </form>
+      <br />
+
+      <hr />
+
+      <br />
+      <p>查詢會員姓名</p>
+      <div class="serch">
+        <div class="content">
+          <p>帳號</p>
+          <input id="serch" type="text" />
+        </div>
+        <button id="serch_button" type="button">送出</button>
+      </div>
+      <br />
+
+      <br />
+      <p>更新我的姓名</p>
+      <div class="change">
+        <div class="content">
+          <p>名字</p>
+          <input id="change" type="text" />
+        </div>
+        <button id="change_button" type="button">送出</button>
+      </div>
+      <br />
+
+      <hr />
+
+      <br />
+      <div class="message">
+        {% for i in data %}
+        <div class="head">
+          <img src="{{url_for('static', filename='uploads/' + i[3])}}" alt="" />
+          <div>
+            <p>{{i[0]}} <span>{{i[2]}}</span></p>
+
+            <p class="mes">{{i[1]}}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </main>
+  </body>
+  <script src="{{url_for('static', filename='/app.js')}}"></script>
+</html>

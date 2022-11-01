@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>首頁</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='styles/style.css')}}"
+    />
+  </head>
+  <body>
+    <nav>
+      <p>歡迎光臨，請輸入帳號密碼</p>
+    </nav>
+    <main>
+      {% with message = get_flashed_messages() %} {% if message %}
+
+      <p>{{ message.0 }}</p>
+      <br />
+
+      {% endif %} {% endwith %}
+
+      <p>註冊帳號</p>
+      <form action="/signup" , method="post">
+        <div class="username">
+          <p>姓名</p>
+          <input type="text" name="name" required />
+        </div>
+
+        <div class="account">
+          <p>帳號</p>
+          <input type="text" name="username" required />
+        </div>
+
+        <div class="password">
+          <p>密碼</p>
+          <input type="password" name="password" required />
+        </div>
+        <button>註冊</button>
+      </form>
+      <br />
+      <hr />
+      <br />
+      <p>登入系統</p>
+      <form action="/signin" , method="post">
+        <div class="account">
+          <p>帳號</p>
+          <input type="text" name="account" />
+        </div>
+        <div class="password">
+          <p>密碼</p>
+          <input type="password" name="password" />
+        </div>
+        <button>登入</button>
+      </form>
+    </main>
+  </body>
+</html>
